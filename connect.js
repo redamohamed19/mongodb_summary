@@ -6,9 +6,17 @@ const connect=()=>{
 }
 const food=new mongoose.Schema({
  
-    name:String,
-    time:String,
-    price:String
+    name:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    info:{
+        time:String,
+        price:String
+    },
+    Categorie:[{type:String}]
+   
 
 })
 const Food=mongoose.model("food",food);
